@@ -1,0 +1,93 @@
+{% extends 'prof/base/base.html' %}
+{% load static %}
+{% block title %}Home{% endblock title %}
+{% block navbar_title %}{{ prof.username }}{% endblock navbar_title %}
+{% block navitem_title %}Home{% endblock navitem_title %}
+
+{% block buttons %}
+    
+    <a class="btn btn-outline-danger" href="{% url 'main:logout' %}">Logout</a>
+{% endblock buttons %}
+
+{% block body %}
+    <br>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-4">  
+                <div class="card" style="width: 18rem;">
+                    <img class="card-img-top" style="height: 30vh;" src="{% static 'prof/images/students.jpeg' %}" alt="Card image cap">
+                    <div class="card-body">
+                      <!-- <h5 class="card-title">Students</h5>
+                      <p class="card-text">List of students who have registered for exams.</p> -->
+                      <a href="{% url 'prof:view_students' %}" class="btn btn-block btn-outline-dark"
+                text-align='center'>Students</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="card" style="width: 18rem;">
+                    <img class="card-img-top" style="height: 30vh;" src="{% static 'prof/images/exams.jpeg' %}" alt="Card image cap">
+                    <div class="card-body">
+                      <!-- <h5 class="card-title">Exams</h5>
+                      <p class="card-text">Create a new exam.</p> -->
+                      <a href="{% url 'prof:view_exams' %}" class="btn btn-block btn-outline-dark"
+                text-align='center'>Exams</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="card" style="width: 18rem;">
+                    <img class="card-img-top" style="height: 30vh;" src="{% static 'prof/images/question.jpeg' %}" alt="Card image cap">
+                    <div class="card-body">
+                      <!-- <h5 class="card-title">Card title</h5>
+                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->
+                      <a href="{% url 'prof:add_question' %}" class="btn btn-block btn-outline-dark"
+                text-align='center'>Question</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-sm-4">
+                <div class="card" style="width: 18rem;">
+                    <img class="card-img-top" style="height: 30vh;" src="{% static 'prof/images/question_pap.jpeg' %}" alt="Card image cap">
+                    <div class="card-body">
+                      <!-- <h5 class="card-title">Card title</h5>
+                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->
+                      <a href="{% url 'prof:make_paper' %}" class="btn btn-block btn-outline-dark" text-align='center'>Question
+                        Paper</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="card" style="width: 18rem;">
+                    <img class="card-img-top" style="height: 30vh;" src="{% static 'prof/images/student_group.jpeg' %}" alt="Card image cap">
+                    <div class="card-body">
+                      <!-- <h5 class="card-title">Card title</h5>
+                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->
+                      <a href="{% url 'prof:view_groups' %}" class="btn btn-block btn-outline-dark" text-align='center'>Student
+                        Groups</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- <div class="container-fluid">
+        <div align ='center'>
+            <br>
+            <a href="{% url 'prof:view_students' %}" class="btn btn-primary"
+                text-align='center'>Students</a><br><br><br>
+            <a href="{% url 'prof:view_exams' %}" class="btn btn-primary"
+                text-align='center'>Exams</a><br><br><br>
+            <a href="{% url 'prof:add_question' %}" class="btn btn-primary"
+                text-align='center'>Question</a><br><br><br>
+            <a href="{% url 'prof:make_paper' %}" class="btn btn-primary" text-align='center'>Question
+                Paper</a><br><br><br>
+            <a href="{% url 'prof:view_groups' %}" class="btn btn-primary" text-align='center'>Student
+                Groups</a><br><br><br>
+        </div>
+    </div> -->
+
+{% endblock body %}

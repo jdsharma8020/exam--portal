@@ -1,0 +1,35 @@
+{% extends 'main/base.html' %}
+{% load crispy_forms_tags %}
+
+{% block title %}Register{% endblock title %}
+
+{% block body %}
+    <!-- {% if wrong_cred_message %}
+    <div class="alert alert-danger alert-dismissible" role="alert">
+        <strong>{{ wrong_cred_message }}</strong> : Please enter correct credentials
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    {% endif %} -->
+
+   <div class="container my-2">
+<div class="content-section">
+    <form method="post">{% csrf_token %}
+        <fieldset class="form-group">
+            <legend class="border-bottom mb-4">Join Today</legend>
+            {{ form|crispy }}
+        </fieldset>
+        <div class="form-group">
+            <button class="btn btn-outline-info" type="submit">Sign Up</button>
+        </div>
+    </form>
+    <div class="border-top pt-3 pb-3">
+        <small class="text-muted">Already Have an Account?  <a class="ml-2" href="{% url 'main:login' %}">
+            <button type="button" class="btn btn-outline-dark">Login</button>
+        </a> </small>
+    </div>
+</div>
+
+</div>
+{% endblock body %}

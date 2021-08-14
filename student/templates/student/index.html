@@ -1,0 +1,58 @@
+{% extends 'student/base/base.html' %}
+{% load static %}
+{% block title %}Home{% endblock title %}
+{% block nav_title %}{{ stud.username }}{% endblock nav_title %}
+{% block url %}{% url 'main:logout' %}{% endblock url %}
+{% block action %}Logout{% endblock action %}
+
+{% block body %}
+    <!-- <div class="container-fluid">
+        <div align='center'>
+            <br>
+            <div class="row">
+                <div class="col-sm-6">
+                  <div class="card">
+                    <div class="card-body">
+                      <h5 class="card-title">Special title treatment</h5>
+                      <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                      <a href="{% url 'student:exams' %}" class="btn btn-primary" text-align='center'>Exams</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="card">
+                    <div class="card-body">
+                      <h5 class="card-title">Special title treatment</h5>
+                      <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                      <a href="{% url 'student:results' %}" class="btn btn-primary" text-align='center'>Results</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            <!-- <a href="{% url 'student:exams' %}" class="btn btn-primary" text-align='center'>Exams</a><br><br><br>
+            <a href="{% url 'student:results' %}" class="btn btn-primary" text-align='center'>Results</a><br><br><br> -->
+        <!-- </div>
+    </div> -->
+    <br>
+    <div class="container">
+        <div class="card" >
+            <img src="{% static 'images/exams.jpeg' %}" style="height: 25vh; width: auto;" alt="">
+            <div class="card-body">
+              <!-- <h5 class="card-title">Special title treatment</h5>
+              <p class="card-text">With supporting text below as a natural lead-in to additional content.</p> -->
+              <a href="{% url 'student:exams' %}" class="btn btn-outline-dark btn-block" text-align='center'>Exams</a>
+            </div>
+        </div>
+        <br>
+
+        <div class="card">
+            <img src="{% static 'images/result.jpeg' %}" style="height: 25vh; width: auto;" alt="">
+            <div class="card-body">
+              <!-- <h5 class="card-title">Special title treatment</h5>
+              <p class="card-text">With supporting text below as a natural lead-in to additional content.</p> -->
+              <a href="{% url 'student:results' %}" class="btn btn-outline-dark btn-block" text-align='center'>Results</a>
+            </div>
+        </div>
+
+    </div>
+{% endblock body %}
