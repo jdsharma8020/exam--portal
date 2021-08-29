@@ -19,7 +19,7 @@ def create_student_group(request):
     return render(request, 'prof/group/addview_groups.html', {
         'special_students_db': Special_Students.objects.filter(professor=prof), 'prof': prof, 'groupForm': Group_Form()
     })
-    
+
 
 def view_specific_group(request, group_id):
     prof = request.user
