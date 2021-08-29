@@ -5,6 +5,7 @@ from authAccount.models import User
 
 from .exams import *
 from .result import *
+from student.models import Stu_Question
 
 # Create your views here.
 

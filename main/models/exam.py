@@ -6,7 +6,7 @@ from .question_paper import Question_Paper
 from authAccount.models import User
 
 class Exam_Model(models.Model):
-    professor = models.ForeignKey(User, limit_choices_to={'groups__name': "Professor"}, on_delete=models.CASCADE)
+    professor = models.ForeignKey(User, limit_choices_to={'isTeacher': True}, on_delete=models.CASCADE)
     name = models.CharField(max_length=50)
     total_marks = models.IntegerField()
     duration = models.IntegerField()

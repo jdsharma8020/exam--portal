@@ -5,7 +5,8 @@ from main.models.group import Special_Students
 from student.models import StuExam_DB
 from authAccount.models import User
 from django.utils import timezone
-
+from main.models.exam import Exam_Model
+from student.models import Stu_Question
 
 def exams(request):
     student = request.user
